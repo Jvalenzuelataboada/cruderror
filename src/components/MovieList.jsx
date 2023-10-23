@@ -1,16 +1,15 @@
+import MovieCard from "./MovieCard";
 
-// eslint-disable-next-line react/prop-types
-const MovieList = ({movies}) => {
+// eslint-disable-next-line 
+const MovieList = ({movies, deleteMovie, handleClickEdit}) => {
     console.log(movies);
   return (
-    <div>
       <ul>
-        {
-            
-        }
+        {movies.map((movie) => (
+            <MovieCard  key={movie.id} movie={movie} handleClickEdit={handleClickEdit} />
+            ))}
       </ul>
-    </div>
-  )
-}
+  );
+};
 
 export default MovieList
